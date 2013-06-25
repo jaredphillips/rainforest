@@ -16,5 +16,9 @@ class ApplicationController < ActionController::Base
   	end
   end
 
-  helper_method :current_user
+  def sorted_by_date(reviews)
+	  reviews.sort_by { |review| review.created_at }
+  end
+
+  helper_method :current_user, :sorted_by_date
 end

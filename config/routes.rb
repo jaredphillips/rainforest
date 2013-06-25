@@ -5,7 +5,7 @@ Rainforest::Application.routes.draw do
   get "reviews/edit"
   get "users/new"
   get "users/create"
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
 
   resources :products do
     resources :reviews, except: [:index] 

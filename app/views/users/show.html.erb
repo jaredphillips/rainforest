@@ -1,0 +1,11 @@
+<h1><%= @user.name %></h1>
+
+<p><%= @user.email %></p>
+
+<% sorted_by_date(@user.reviews).reverse.each do |review| %>
+  <ul>
+  	<li><%= review.product.name %></li>
+  	<li><%= review.comment %></li>
+  </ul>
+<% end %>
+

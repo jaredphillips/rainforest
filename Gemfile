@@ -35,6 +35,10 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
+
+group :test, :development do
+	gem "factory_girl_rails", "~> 4.2.1"
+end
 # Use unicorn as the app server
 # gem 'unicorn'
 
