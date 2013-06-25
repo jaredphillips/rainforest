@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
 	before_filter :load_product
+  before_filter :ensure_logged_in, only: [:show, :create, :edit, :update, :destroy]
 
   def show
   	@review = Review.find(params[:id])
@@ -13,8 +14,6 @@ class ReviewsController < ApplicationController
   		product_id: @product.id,
   		user_id: current_user.id
   	)
-
-
 
   	if @review.save
   		redirect_to @product, notice: "Review Created!"
@@ -39,7 +38,6 @@ class ReviewsController < ApplicationController
 
   def review_params
   	params.require(:review).permit(:comment, :user_id, :product_id)
-  	
   end
 
 end
