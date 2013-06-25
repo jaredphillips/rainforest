@@ -4,6 +4,13 @@ class User < ActiveRecord::Base
 	has_many :reviews
 	has_many :products, through: :reviews
 
+	validates :name,
+		presence: true
+
+	validates :email,
+		presence: true,
+		format: { with: /@/ }
+
 	validates :password,
 		presence: true,
 		length: { minimum: 6 },
