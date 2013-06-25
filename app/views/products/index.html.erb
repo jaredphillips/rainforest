@@ -4,7 +4,7 @@
 	<section>
 		<h3><%= link_to product.name, product %></h3>
 		<p><%= product.description %></p>
-		<p><%= product.formatted_price %></p>
+		<p><%= number_to_currency(product.price, unit: "$") %></p>
 		<p><%= link_to "Edit", edit_product_path(product) %> | <%= link_to "Delete", product,confirm: "Really?", method: :delete %>
 	</section>
 <% end %>

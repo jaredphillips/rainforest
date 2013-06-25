@@ -1,7 +1,7 @@
 <section>
 	<h3><%= @product.name %></h3>
 	<p><%= @product.description %></p>
-	<p><%= @product.formatted_price %></p>
+	<p><%= number_to_currency(@product.price, unit: "$") %></p>
 	<h4>Reviews</h4>
 	<h5>Add a Review</h5>
 	<% if current_user %> 
